@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Erica+One&display=swap");
+h1 {
+  font-family: Audiowide;
+  color: beige;
+}
+
+body {
+  background-color: rgb(27, 25, 25);
+}
+
+label {
+  color: bisque;
+}
