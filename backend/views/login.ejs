@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp Page</title>
+    <link rel="stylesheet" href="/stylesheets/stylesheet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Hello this is the Login</h1>
+    </div>
+    <form action="/login" method="post">
+      <div>
+        <div class="gap">
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            placeholder="email"
+            id="email"
+            name="email"
+            class="middletext"
+          />
+        </div>
+        <div class="gap">
+          <label for="password">password: </label>
+          <input
+            type="text"
+            placeholder="password"
+            id="password"
+            name="password"
+            class="middletext"
+          />
+        </div>
+        <button class="gap" type="submit">Login</button>
+      </div>
+    </form>
+  </body>
+</html>

@@ -9,5 +9,5 @@ dotenv.config({ path: path.resolve(__dirname, "../../.env") }); //THis is becaus
 
 export const PORT = Number(process.env.PORT);
 export const Connection_String = process.env.Connection_String;
-
+export const SecretKey = process.env
 

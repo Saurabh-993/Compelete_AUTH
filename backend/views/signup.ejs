@@ -10,21 +10,40 @@
   <body>
     <div>
       <h1>Hello this is the SignUp</h1>
-    </div class="flex">
+    </div>
     <form action="/signup" method="post">
       <div>
-        <div>
+        <div class="gap">
           <label for="username">Username: </label>
-          <input type="text" placeholder="username" id="username" />
+          <input
+            type="text"
+            placeholder="username"
+            id="username"
+            name="username"
+            class="middletext"
+          />
         </div>
-        <div>
+        <div class="gap">
           <label for="email">Email: </label>
-          <input type="email" placeholder="email" id="email" />
+          <input
+            type="email"
+            placeholder="email"
+            id="email"
+            name="email"
+            class="middletext"
+          />
         </div>
-        <div>
+        <div class="gap">
           <label for="password">password: </label>
-          <input type="text" placeholder="password" id="password" />
+          <input
+            type="text"
+            placeholder="password"
+            id="password"
+            name="password"
+            class="middletext"
+          />
         </div>
+        <button class="gap" type="submit">Signup</button>
       </div>
     </form>
   </body>

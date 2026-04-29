@@ -6,7 +6,9 @@ import cookieParser from "cookie-parser";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import signuprouter from "./backend/routes/signup.routes.js";
-
+import loginrouter from "./backend/routes/login.routes.js";
+import greetrouter from "./backend/routes/greet.routes.js";
+import deleterouter from "./backend/routes/delete.routes.js";
 app.use(helmet()); //It helps in sending the correct response status codes and protects the systems from attacks like XSS.
 
 await connectDB();
@@ -27,5 +29,8 @@ app.set("views", path.join(__dirname, "/backend/views"));
 
 //Using the middleware on the routes
 app.use("/", signuprouter);
+app.use("/", loginrouter);
+app.use("/", greetrouter);
+app.use("/", deleterouter);
 
 serverStarter();
