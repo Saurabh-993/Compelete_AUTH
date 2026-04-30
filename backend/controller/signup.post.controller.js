@@ -10,11 +10,11 @@ async function userExistence(email) {
   return false;
 }
 
-export default async function signUpRegisteror(req, res) {
+export default async function signUpRegisteror(req, res, next) {
   const { username, email, password } = req.body;
   const val = await userExistence(email);
   if (val) {
-    res.redirect("/login");
+    return res.redirect("/login");
   }
   const hashedPass = await passwordEncrypter(password);
   await credential.create({
@@ -22,5 +22,7 @@ export default async function signUpRegisteror(req, res) {
     email: email,
     password: hashedPass,
   });
-  res.render("greet");
+  next();
 }
+
+//basically we have to add cookiegenerator as well as another redirector
