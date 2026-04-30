@@ -8,7 +8,7 @@ import { fileURLToPath } from "url";
 import signuprouter from "./backend/routes/signup.routes.js";
 import loginrouter from "./backend/routes/login.routes.js";
 import greetrouter from "./backend/routes/greet.routes.js";
-import deleterouter from "./backend/routes/delete.routes.js";
+import deleterouter from "./backend/routes/logout.routes.js";
 app.use(helmet()); //It helps in sending the correct response status codes and protects the systems from attacks like XSS.
 
 await connectDB();
@@ -18,9 +18,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 //setting the parsers
+app.use(cookieParser()); //We are Just using it so we can read out the jwt that we will send through the cookies.
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser()); //We are Just using it so we can read out the jwt that we will send through the cookies.
 app.use(express.static(path.join(__dirname, "/backend/public")));
 
 //Setting my view engine as EJS and also its location
