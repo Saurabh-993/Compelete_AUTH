@@ -5,7 +5,9 @@ import { SecretKey } from "../config/env.config.js";
 
 export default async function tokenVerification(req, res, next) {
   try {
-    const token = req.cookies?.token;
+    const authobj = req.headers?.authorization;
+    const token = authobj.split(" ")[1];
+    console.log(token);
     if (token) {
       const isverify = jwt.verify(token, SecretKey);
       req.user = isverify;
@@ -18,3 +20,4 @@ export default async function tokenVerification(req, res, next) {
     console.log("something went wrong in Token Verification");
   }
 }
+//
