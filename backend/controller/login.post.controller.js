@@ -19,11 +19,7 @@ export default async function passwordChecker(req, res, next) {
   }
   res.redirect("/signup");
 }
-//Note: here we aren't rendering the page as this token setting is the work of frontend but for showing the mechanism we are doing this in backend thats why we are not able to render the page now
+
 export async function justLoginRender(req, res) {
-  res.status(200).json({
-    message: "successful",
-    token: req.token,
-    success: true,
-  });
+  res.redirect("/greet");
 }

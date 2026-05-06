@@ -12,7 +12,7 @@ export default async function tokenGenerator(req, res, next) {
     { _id: 0, username: 1 },
   );
   const token = jwt.sign({ username: username }, SecretKey);
-  req.token = token;
+  res.cookie("token", token);
   next();
 }
 

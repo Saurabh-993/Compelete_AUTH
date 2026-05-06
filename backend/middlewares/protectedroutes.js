@@ -4,8 +4,7 @@ import { SecretKey } from "../config/env.config.js";
 
 export default async function protectedVerification(req, res, next) {
   try {
-    const authobj = req.headers?.authorization;
-    const token = authobj.split(" ")[1];
+    const token = req.cookies?.token;
     if (!token) {
       return res.redirect("/signup");
     }
