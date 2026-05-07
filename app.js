@@ -9,6 +9,9 @@ import signuprouter from "./backend/routes/signup.routes.js";
 import loginrouter from "./backend/routes/login.routes.js";
 import greetrouter from "./backend/routes/greet.routes.js";
 import deleterouter from "./backend/routes/logout.routes.js";
+import protecteduser from "./backend/routes/protected.user.routes.js";
+import protectedmanager from "./backend/routes/protected.manager.route.js";
+import protectedadmin from "./backend/routes/protected.admin.routes.js";
 app.use(helmet()); //It helps in sending the correct response status codes and protects the systems from attacks like XSS.
 
 await connectDB();
@@ -32,5 +35,8 @@ app.use("/", signuprouter);
 app.use("/", loginrouter);
 app.use("/", greetrouter);
 app.use("/", deleterouter);
+app.use("/protected", protecteduser);
+app.use("/protected", protectedadmin);
+app.use("/protected", protectedmanager);
 
 serverStarter();
