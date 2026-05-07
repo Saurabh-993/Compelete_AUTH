@@ -1,9 +1,9 @@
 import express from "express";
+import tokenVerification from "../middlewares/tokenverifier.js";
+import { adminRenderer } from "../controller/protected.routes.controller.js";
 
 const router = express.Router();
 
-router.get("/admin", async (req, res) => {
-  res.render("protected.admin.ejs", { username: "lala", role: "admin" });
-});
+router.get("/admin", adminRenderer);
 
 export default router;

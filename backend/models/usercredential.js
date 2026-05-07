@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { stringify } from "querystring";
 
 const userInfo = new mongoose.Schema(
   {
@@ -14,6 +15,12 @@ const userInfo = new mongoose.Schema(
     password: {
       type: String,
       required: [true, "Please provide an Password for the Email"],
+    },
+    role: {
+      type: String,
+      required: [true, "You should have a role "],
+      enum: ["user", "admin", "manager"],
+      default: "user",
     },
   },
   {

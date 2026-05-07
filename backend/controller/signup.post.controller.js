@@ -11,7 +11,7 @@ async function userExistence(email) {
 }
 
 export default async function signUpRegisteror(req, res, next) {
-  const { username, email, password } = req.body;
+  const { username, email, password, role } = req.body;
   const val = await userExistence(email);
   if (val) {
     return res.redirect("/login");
@@ -21,6 +21,7 @@ export default async function signUpRegisteror(req, res, next) {
     username: username,
     email: email,
     password: hashedPass,
+    role: role,
   });
   next();
 }

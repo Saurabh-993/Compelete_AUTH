@@ -58,3 +58,7 @@ label {
   transition-delay: 100ms;
   transition-timing-function: ease-out;
 }
+
+h2 {
+  color: beige;
+}
