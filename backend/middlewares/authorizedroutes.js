@@ -19,6 +19,6 @@ export default async function protectedJWTverifier(req, res, next) {
     }
     return res.redirect("/login");
   } catch (error) {
-    res.send("Something went wrong! Please login again");
+    res.status(401).send("Something went wrong! Please login again");
   }
 }
