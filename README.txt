@@ -6,4 +6,4 @@ HERE IN THIS FOLDER WE ARE GOING TO CREATE A COMPELETE AUTHENTICATION & AUTHERIZ
 -- we will be using helmet also for protecting our headers. (just an industry default)✅
 -- we will be using EJS for view engine.✅
 -- we will be using argon2 for hashing of sensitive information.✅
--- At last we will be using the authorization parts.
+-- At last we will be using the authorization parts.✅
